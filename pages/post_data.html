@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/stylee.css">
+    <title>Blood Donation Form</title>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="../home.html">Home</a></li>
+            <li><a href="post_data.html">Enter data</a></li>
+            <li><a href="get_data.html">Get data</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Blood Donation Form</h2>
+        <form id="bloodDonationForm">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+
+            <label for="bloodAmount">Blood Amount (ml):</label>
+            <input type="number" id="bloodAmount" name="bloodAmount" required>
+
+            <label for="bloodType">Blood Type:</label>
+            <input type="text" id="bloodType" name="bloodType" required>
+
+            <!-- <label for="hospital">Hospital:</label> -->
+            <label for="hospital">Hospital:</label>
+            <select id="hospital" name="hospital" required>
+                <option value="Hospital A">Hospital A</option>
+                <!-- <option value="HospitalB">Hospital B</option> -->
+                <!-- Add more hospitals as needed -->
+            </select>
+            <!-- <input type="text" id="hospital" name="hospital" required> -->
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <!-- <button type="button" onclick="submitForm()">Submit</button> -->
+            <button type="button" onclick="submitForm()" id="submitButton">
+                <span id="buttonText">Submit</span>
+                <div class="spinner" id="loadingIndicator"></div>
+            </button>
+        </form>
+    </div>
+
+    <script src="../api_test/post_api.js"></script>
+</body>
+</html>
