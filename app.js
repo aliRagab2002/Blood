@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require("cors")
 const ejs = require ("ejs")
 const path = require('path')
 const app = express()
@@ -18,12 +19,13 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 app.set('view engine','ejs')
 
 
-
+app.use(cors())
+app.use(express.json())
 
 const port = process.env.PORT || 4000
 
 require('./db/db')
-app.use(express.json())
+
 
 app.get('/',(req,res)=>{
     res.render('index')
@@ -38,8 +40,7 @@ app.get('/post_data',(req,res)=>{
 
 })
 
-const cors = require("cors")
-app.use(cors())
+
 
 //Hosptial A
 const router = require('./Hosptial A/routes/Doner.route')
