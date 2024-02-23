@@ -1,12 +1,41 @@
 const express = require('express')
+const ejs = require ("ejs")
+const path = require('path')
 const app = express()
 const cors = require("cors")
 app.use(cors())
+// app.use(express.static('public'))
+// app.use('/css',express.static(__dirname+ "public/css"))
+// app.use('/api_test',express.static(__dirname +"public/api_test"))
+
+// app.set('views','./views')
+// app.set('view engine','ejs')
+
+// const directorPath = path.join(__dirname,'./public')
+// app.use(express.static(directorPath))
+app.use('/public', express.static(path.join(__dirname, 'public')));
+
+app.set('view engine','ejs')
+
+
+
 
 const port = process.env.PORT || 4000
 
 require('./db/db')
 app.use(express.json())
+
+app.get('/',(req,res)=>{
+    res.render('index')
+})
+
+app.get('/get_data',(req,res)=>{
+    res.render('get_data')
+})
+
+app.get('/post_data',(req,res)=>{
+    res.render('post_data')
+})
 
 //Hosptial A
 const router = require('./Hosptial A/routes/Doner.route')
