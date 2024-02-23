@@ -81,7 +81,7 @@ router.delete('/Doners/:id',async(req,res)=>{
         if(!new_doner){
          return res.status(404).send('can not find id')
         }
-        return res.status(200).send('successful to delete data',body)
+        return res.status(200).send('successful to delete data')
         
     }
     catch(e){

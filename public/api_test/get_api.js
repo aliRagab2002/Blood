@@ -1,7 +1,7 @@
 let buffer = [];
 
 async function getData() {
-    let api = await fetch('https://blood-skuv.onrender.com/Doners', { method: 'GET' });
+    let api = await fetch('https://odd-cyan-hermit-crab-hem.cyclic.app/Doners', { method: 'GET' });
     let data = await api.json();
     buffer = data.data.doners;
     console.log(buffer);

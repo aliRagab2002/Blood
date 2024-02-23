@@ -2,8 +2,8 @@ const express = require('express')
 const ejs = require ("ejs")
 const path = require('path')
 const app = express()
-const cors = require("cors")
-app.use(cors())
+
+
 // app.use(express.static('public'))
 // app.use('/css',express.static(__dirname+ "public/css"))
 // app.use('/api_test',express.static(__dirname +"public/api_test"))
@@ -35,7 +35,11 @@ app.get('/get_data',(req,res)=>{
 
 app.get('/post_data',(req,res)=>{
     res.render('post_data')
+
 })
+
+const cors = require("cors")
+app.use(cors())
 
 //Hosptial A
 const router = require('./Hosptial A/routes/Doner.route')
