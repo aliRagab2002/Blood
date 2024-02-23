@@ -12,7 +12,7 @@ function submitForm() {
     };
 
     // Assume you have an API endpoint to post the data (replace with your actual API URL)
-    const apiUrl = "http://localhost:4000/Doners";
+    const apiUrl = "https://blood-skuv.onrender.com/Doners";
 
     fetch(apiUrl, {
         method: "POST",
