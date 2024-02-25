@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 const validator = require('validator')
-
+const { format } = require('date-fns');
 const donerSchema = new mongoose.Schema({
     fullName:{
         type:String,
@@ -45,7 +45,8 @@ const donerSchema = new mongoose.Schema({
     },
     date:{
         type:Date,
-        default:Date.now
+        default:Date.now,
+        
     },
 
 
@@ -55,5 +56,7 @@ const donerSchema = new mongoose.Schema({
 
 
 const Doner = mongoose.model("a_doner",donerSchema)
+
+
 
 module.exports=Doner
